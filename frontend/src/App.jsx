@@ -66,6 +66,16 @@ export default function App() {
       </button>
 
       {error && <p role="alert">{error}</p>}
+            {preview?.errors?.length > 0 && (
+        <section>
+          <h2>Prices to correct</h2>
+          <ul>
+            {preview.errors.map((message) => (
+              <li key={message}>{message}</li>
+            ))}
+          </ul>
+        </section>
+      )}
 
       {preview && (
         <table>
